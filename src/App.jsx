@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import CurrentDate from './components/CurrentDate'
 import LoginForm from './components/LoginForm'
 
@@ -7,6 +8,8 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   return (
     <>
       <div className="current-date-wrapper">
@@ -14,6 +17,19 @@ function App() {
       </div>
 
       <section id="center">
+      {isLoggedIn ? (
+    <>
+      <h1>Sveiki atvykę!</h1>
+      <button
+        type="button"
+        className="back-button"
+        onClick={() => setIsLoggedIn(false)}
+      >
+        Atgal
+      </button>
+    </>
+  ) : (
+    <>
   <div className="hero">
     <img
       src={heroImg}
@@ -38,7 +54,9 @@ function App() {
 
   <h1>Pirmas Projektas</h1>
 
-  <LoginForm />
+  <LoginForm onLogin={() => setIsLoggedIn(true)} />
+    </>
+  )}
 </section>
 
     </>

@@ -1,6 +1,11 @@
-function LoginForm() {
+function LoginForm({ onLogin }) {
+  function handleSubmit(event) {
+    event.preventDefault()
+    onLogin()
+  }
+
   return (
-    <form className="login-form">
+    <form className="login-form" onSubmit={handleSubmit}>
       <div className="login-field">
         <label htmlFor="email">E-mail</label>
         <input
@@ -8,6 +13,8 @@ function LoginForm() {
           type="email"
           name="email"
           placeholder="Enter your e-mail"
+          autoComplete="email"
+          required
         />
       </div>
 
@@ -18,10 +25,12 @@ function LoginForm() {
           type="password"
           name="password"
           placeholder="Enter your password"
+          autoComplete="current-password"
+          required
         />
       </div>
 
-      <button type="button" className="login-button">
+      <button type="submit" className="login-button">
         LOGIN
       </button>
     </form>
