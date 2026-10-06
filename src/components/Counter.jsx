@@ -3,7 +3,7 @@ function Counter({ count, setCount }) {
     <button
       type="button"
       className="counter"
-      onClick={() => setCount((count) => count + 1)}
+      onClick={() => setCount((currentCount) => currentCount + 1)}
     >
       Count is {count}
     </button>
