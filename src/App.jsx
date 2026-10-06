@@ -28,10 +28,21 @@ function App() {
       {isLoggedIn ? (
     <>
       <div className="service-buttons" aria-label="Paslaugos">
-        {['ChatGPT', 'Claude', 'GitHub', 'Cursor'].map((service) => (
-          <button className="service-button" key={service} type="button" disabled>
-            {service}
-          </button>
+        {[
+          { name: 'ChatGPT', url: 'https://chatgpt.com/' },
+          { name: 'Claude', url: 'https://claude.ai/' },
+          { name: 'GitHub', url: 'https://github.com/' },
+          { name: 'Cursor', url: 'https://www.cursor.com/' },
+        ].map((service) => (
+          <a
+            className="service-button"
+            href={service.url}
+            key={service.name}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {service.name}
+          </a>
         ))}
       </div>
       <button
