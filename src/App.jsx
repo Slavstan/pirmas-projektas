@@ -13,6 +13,13 @@ function App() {
 
   return (
     <>
+      {isLoggedIn && (
+        <div className="login-success-message">
+          <h1>Sėkmingai prisijungėte prie pirmo projekto</h1>
+          <p className="login-success-email">{email}</p>
+        </div>
+      )}
+
       <div className="current-date-wrapper">
         <CurrentDate />
       </div>
@@ -20,8 +27,6 @@ function App() {
       <section id="center">
       {isLoggedIn ? (
     <>
-      <h1>Sėkmingai prisijungėte prie pirmo projekto</h1>
-      <p className="login-success-email">{email}</p>
       <button
         type="button"
         className="back-button"

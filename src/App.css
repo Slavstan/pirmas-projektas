@@ -168,6 +168,25 @@
   overflow-wrap: anywhere;
 }
 
+.login-success-message {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  max-width: min(420px, calc(100% - 220px));
+  text-align: left;
+}
+
+.login-success-message h1 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.login-success-message .login-success-email {
+  font-size: 14px;
+}
+
 .back-button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
