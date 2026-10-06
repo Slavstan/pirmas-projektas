@@ -9,6 +9,7 @@ import './App.css'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [email, setEmail] = useState('')
 
   return (
     <>
@@ -19,7 +20,8 @@ function App() {
       <section id="center">
       {isLoggedIn ? (
     <>
-      <h1>Sveiki atvykę!</h1>
+      <h1>Sėkmingai prisijungėte prie pirmo projekto</h1>
+      <p className="login-success-email">{email}</p>
       <button
         type="button"
         className="back-button"
@@ -54,7 +56,12 @@ function App() {
 
   <h1>Pirmas Projektas</h1>
 
-  <LoginForm onLogin={() => setIsLoggedIn(true)} />
+    <LoginForm
+      onLogin={(enteredEmail) => {
+        setEmail(enteredEmail)
+        setIsLoggedIn(true)
+      }}
+    />
     </>
   )}
 </section>

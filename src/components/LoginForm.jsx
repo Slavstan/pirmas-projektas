@@ -1,7 +1,8 @@
 function LoginForm({ onLogin }) {
   function handleSubmit(event) {
     event.preventDefault()
-    onLogin()
+    const formData = new FormData(event.currentTarget)
+    onLogin(formData.get('email'))
   }
 
   return (

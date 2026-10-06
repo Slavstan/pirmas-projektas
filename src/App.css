@@ -163,6 +163,11 @@
   cursor: pointer;
 }
 
+.login-success-email {
+  color: var(--text-h);
+  overflow-wrap: anywhere;
+}
+
 .back-button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
