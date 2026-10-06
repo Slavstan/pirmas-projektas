@@ -27,6 +27,13 @@ function App() {
       <section id="center">
       {isLoggedIn ? (
     <>
+      <div className="service-buttons" aria-label="Paslaugos">
+        {['ChatGPT', 'Claude', 'GitHub', 'Cursor'].map((service) => (
+          <button className="service-button" key={service} type="button" disabled>
+            {service}
+          </button>
+        ))}
+      </div>
       <button
         type="button"
         className="back-button"

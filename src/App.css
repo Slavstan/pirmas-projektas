@@ -78,6 +78,25 @@
   box-sizing: border-box;
 }
 
+.service-buttons {
+  width: min(100%, 420px);
+  display: flex;
+  gap: 10px;
+}
+
+.service-button {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--code-bg);
+  color: var(--text);
+  font: 500 14px/135% var(--sans);
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
 .login-field {
   display: flex;
   flex-direction: column;
